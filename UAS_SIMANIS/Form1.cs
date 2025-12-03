@@ -15,6 +15,8 @@ namespace UAS_SIMANIS
         public Form1()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.Font;
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -24,7 +26,8 @@ namespace UAS_SIMANIS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized; 
         }
 
         private void Password_TextChanged(object sender, EventArgs e)

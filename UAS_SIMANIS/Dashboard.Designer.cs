@@ -96,7 +96,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel3.Location = new System.Drawing.Point(248, 120);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(450, 66);
