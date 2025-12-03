@@ -44,7 +44,24 @@ namespace UAS_SIMANIS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string username = Username.Text;
+            string password = Password.Text;
+
+            // Login simple dulu
+            if (username == "admin" && password == "123")
+            {
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+                this.Hide(); // ngumpetin form login
+            }
+            else
+            {
+                MessageBox.Show("Username atau password salah!");
+            }
 
         }
     }
 }
+        
+
+    
