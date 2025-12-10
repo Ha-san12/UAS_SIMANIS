@@ -47,6 +47,7 @@
             // 
             // panel2
             // 
+            // Daril alfarabi
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
