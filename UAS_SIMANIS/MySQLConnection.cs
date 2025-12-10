@@ -21,9 +21,13 @@ public class DB
             connection.Open();
     }
 
-    public void Close()
+
+
+    public void CloseConnection()
     {
         if (connection.State == System.Data.ConnectionState.Open)
+        {
             connection.Close();
+        }
     }
 }

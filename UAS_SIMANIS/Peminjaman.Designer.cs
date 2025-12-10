@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBarang = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,12 +163,29 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Tanggal Peminjaman";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(520, 142);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 9;
+            // 
+            // comboBarang
+            // 
+            this.comboBarang.FormattingEnabled = true;
+            this.comboBarang.Location = new System.Drawing.Point(520, 94);
+            this.comboBarang.Name = "comboBarang";
+            this.comboBarang.Size = new System.Drawing.Size(121, 24);
+            this.comboBarang.TabIndex = 10;
+            // 
             // Peminjaman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(7)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBarang);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -174,6 +193,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Peminjaman";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Peminjaman_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -193,5 +213,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBarang;
     }
 }

@@ -42,7 +42,7 @@ namespace UAS_SIMANIS
                         MessageBox.Show("Username atau password salah!");
                     }
                 }
-                db.Close();
+                db.CloseConnection();
             }
         }
 

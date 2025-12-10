@@ -86,7 +86,9 @@ namespace UAS_SIMANIS
 
         private void label8_Click(object sender, EventArgs e)
         {
-
+            Peminjaman pm = new Peminjaman();
+            pm.Show();
+            this.Hide();
         }
 
         private void label7_Click(object sender, EventArgs e)
