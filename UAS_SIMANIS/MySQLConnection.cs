@@ -2,7 +2,8 @@
 
 public class DB
 {
-    private MySqlConnection connection;
+    private MySqlConnection connection =
+     new MySqlConnection("server=localhost;user id=root;password=;database=db_simanis;");
 
     public DB()
     {

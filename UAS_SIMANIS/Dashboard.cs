@@ -31,18 +31,27 @@ namespace UAS_SIMANIS
         // ✅ INI HARUS DI LUAR, SEJAJAR DENGAN METHOD LAIN!
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            LoadDataPeminjaman(); // Panggil method load data
+            LoadDataPeminjaman();
         }
 
-        // Method untuk ambil data dari database
         private void LoadDataPeminjaman()
         {
             try
             {
                 DB db = new DB();
-                string query = "SELECT id, nama_peminjam AS Peminjam, nama_barang AS Barang, " +
-                               "tgl_pinjam AS [Tgl Pinjam], status AS Status " +
-                               "FROM peminjaman";
+
+                string query =
+                    "SELECT " +
+                    "p.peminjaman_id AS 'ID', " +
+                    "u.username AS 'Peminjam', " +
+                    "i.item_name AS 'Barang', " +
+                    "p.borrow_date AS 'Tgl Pinjam', " +
+                    "p.return_date AS 'Tgl Kembali', " +
+                    "p.status AS 'Status' " +
+                    "FROM peminjaman p " +
+                    "JOIN users u ON p.user_id = u.user_id " +
+                    "JOIN inventaris i ON p.item_id = i.item_id " +
+                    "ORDER BY p.peminjaman_id DESC";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, db.GetConnection());
                 DataTable dt = new DataTable();
@@ -53,15 +62,13 @@ namespace UAS_SIMANIS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
-        private void Dashboard_Load_1(object sender, EventArgs e)
-        {
 
-        }
 
+       
         private void label4_Click(object sender, EventArgs e)
         {
 
