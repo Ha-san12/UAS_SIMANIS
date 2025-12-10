@@ -91,12 +91,16 @@ namespace UAS_SIMANIS
 
         private void label7_Click(object sender, EventArgs e)
         {
-
+            Inventaris inv = new Inventaris();
+            inv.Show();
+            this.Hide();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-
+            Dashboard db = new Dashboard();
+            db.Show();
+            this.Hide();
         }
     }
 }
