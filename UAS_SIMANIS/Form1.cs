@@ -20,30 +20,30 @@ namespace UAS_SIMANIS
             string username = Username.Text;
             string password = Password.Text;
 
-            string query = "SELECT * FROM user WHERE username=@user AND password=@pass";
+            string query = "SELECT * FROM users WHERE username=@user AND password=@pass";
 
-
-            MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-            cmd.Parameters.AddWithValue("@u", username);
-            cmd.Parameters.AddWithValue("@p", password);
-
-            db.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            using (var conn = db.GetConnection())
+            using (var cmd = new MySqlCommand(query, conn))
             {
-                // Login sukses
-                MessageBox.Show("Login berhasil!");
-                this.Hide();
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
-            }
-            else
-            {
-                MessageBox.Show("Username atau password salah!");
-            }
+                cmd.Parameters.AddWithValue("@user", username);
+                cmd.Parameters.AddWithValue("@pass", password);
 
-            db.Close();
+                db.Open(); // matches DB.cs
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        MessageBox.Show("Login berhasil!");
+                        this.Hide();
+                        new Dashboard().Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username atau password salah!");
+                    }
+                }
+                db.Close();
+            }
         }
 
         // Method lainnya...

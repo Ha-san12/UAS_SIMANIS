@@ -6,7 +6,7 @@ public class DB
 
     public DB()
     {
-        connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=db_simanis");
+        connection = new MySqlConnection("server=localhost;uid=root;pwd=;  database=db_simanis");
     }
 
     public MySqlConnection GetConnection()
