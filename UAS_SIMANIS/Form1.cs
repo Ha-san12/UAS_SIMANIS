@@ -50,10 +50,6 @@ namespace UAS_SIMANIS
         private void Form1_Load(object sender, EventArgs e)
         { /* ... */
             {
-                // Set ukuran form menjadi 80% dari lebar dan tinggi layar
-                this.Width = (int)(Screen.PrimaryScreen.WorkingArea.Width * 0.8);
-                this.Height = (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.8);
-
                 // Set posisi form di tengah layar
                 this.StartPosition = FormStartPosition.CenterScreen;
 
